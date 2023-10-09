@@ -1,9 +1,6 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
-// Forward declare Tuple class
-template<class T, class E>
-class Tuple;
 #include "Tuple.h"
 #include "Tuple.cpp"
 

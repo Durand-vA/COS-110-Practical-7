@@ -13,7 +13,10 @@ Dictionary<T, E>::Dictionary() {
 
 template<class T, class E>
 Dictionary<T, E>::~Dictionary() {
-
+    if (currSize != 0) {
+        delete[] keys;
+        delete[] values;
+    }
 }
 
 template<class T, class E>
