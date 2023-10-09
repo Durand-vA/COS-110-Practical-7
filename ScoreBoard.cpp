@@ -3,6 +3,7 @@
 
 #include "ScoreBoard.h"
 
+#include <string>
 
 template<class T>
 ScoreBoard<T>::ScoreBoard() {

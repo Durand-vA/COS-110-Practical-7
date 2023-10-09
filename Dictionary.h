@@ -1,6 +1,9 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
+// Forward declare Tuple class
+template<class T, class E>
+class Tuple;
 #include "Tuple.h"
 #include "Tuple.cpp"
 
@@ -18,6 +21,7 @@ public:
     E at(T key);
     void removeAt(T key);
     void remove(E value);
+    bool exists(T key);
     Tuple<int, T*> keysWithValue(E value);
     void swap(T firstKey, T secondKey);
     void clear();

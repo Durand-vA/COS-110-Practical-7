@@ -143,6 +143,11 @@ void Dictionary<T, E>::remove(E value) {
 }
 
 template<class T, class E>
+bool Dictionary<T, E>::exists(T key) {
+    return (index(*this, key) != -1);
+}
+
+template<class T, class E>
 Tuple<int, T*> Dictionary<T, E>::keysWithValue(E value) {
     int count = 0;
     for (int i = 0; i < currSize; i++) {
