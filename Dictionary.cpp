@@ -47,10 +47,11 @@ void Dictionary<T, E>::set(T key, E value) {
         T* newKeys = new T[currSize + 1];
         E* newVals = new E[currSize + 1];
 
-        for (int i = 0; i < currSize; i++) {
-            newKeys[i] = keys[i];
-            newVals[i] = values[i];
-        }
+        if (currSize != 0 && keys != NULL && values != NULL)
+            for (int i = 0; i < currSize; i++) {
+                newKeys[i] = keys[i];
+                newVals[i] = values[i];
+            }
         newKeys[currSize] = key;
         newVals[currSize] = value;
 
@@ -101,6 +102,7 @@ void Dictionary<T, E>::removeAt(T key) {
         delete [] values;
         keys= NULL;
         values = NULL;
+        currSize = 0;
         return;
     }
 
