@@ -12,7 +12,7 @@ public:
     ~Tuple();
     T getFirst();
     E getSecond();
-    bool operator==(Tuple<T, E> &rhs);
+    bool operator==(Tuple<T, E> rhs);
 };
 
 

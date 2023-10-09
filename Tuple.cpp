@@ -25,7 +25,7 @@ E Tuple<T, E>::getSecond() {
 }
 
 template<class T, class E>
-bool Tuple<T, E>::operator==(Tuple<T, E> &rhs) {
+bool Tuple<T, E>::operator==(Tuple<T, E> rhs) {
     return this->firstValue == rhs.firstValue && this->secondValue == rhs.secondValue;
 }
 
