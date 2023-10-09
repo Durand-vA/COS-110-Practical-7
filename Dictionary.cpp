@@ -14,8 +14,10 @@ Dictionary<T, E>::Dictionary() {
 template<class T, class E>
 Dictionary<T, E>::~Dictionary() {
     if (currSize != 0) {
-        delete[] keys;
-        delete[] values;
+        if (keys != NULL)
+            delete[] keys;
+        if (values != NULL)
+            delete[] values;
     }
 }
 
@@ -26,6 +28,9 @@ int index(Dictionary<T, E>& dict, T key) {
         return -1;
     }
     T* keys = dict.getKeys();
+
+    if (keys == NULL)
+        return -1;
 
     for (int i = 0; i < currSize; i++) {
         if (keys[i] == key) {
@@ -192,8 +197,10 @@ void Dictionary<T, E>::swap(T firstKey, T secondKey) {
 
 template<class T, class E>
 void Dictionary<T, E>::clear() {
-    delete [] keys;
-    delete [] values;
+    if (currSize != 0 && keys != NULL && values != NULL) {
+        delete[] keys;
+        delete[] values;
+    }
     keys = NULL;
     values = NULL;
     currSize = 0;
